@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.bundle.js"></script>
+    <script src="https://kit.fontawesome.com/bab9461982.js" crossorigin="anonymous"></script>
+  <style>
+        
+    .container {
+      width: 100%;
+      max-width: 700px;
+    }
+    
+    nav {
+      border-radius: 30px;
+      display: flex;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      
+    }
+    
+     label {
+      width:100%;
+      line-height: 60px;
+      font-weight: 400;
+      color:black;
+      position: relative;
+    }
+    
+    label:hover {
+      color:red;
+    }
+    
+    label i {
+      margin-right: 4px;
+    }
+    
+    .slider {
+      position: absolute;
+      height: 100%;
+      width: 20%;
+      background: #0ebeff;
+      transition: 0.45s;
+    }
+
+    #home:checked ~ nav .slider {
+      left: 0%;
+    }
+    #about:checked ~ nav .slider {
+      left: 20%;
+    }
+    
+    #contact:checked ~ nav .slider {
+      left: 40%;
+    }
+    
+    #login:checked ~ nav .slider {
+      left: 60%;
+    }
+    
+    #signup:checked ~ nav .slider {
+      left: 80%;
+    }
+    
+   
+    
+    input[type="radio"] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <input type="radio" name="s" id="home">
+    <input type="radio" name="s" id="about">
+    <input type="radio" name="s" id="contact">
+    <input type="radio" name="s" id="login">
+    <input type="radio" name="s" id="signup">
+    
+    <nav>
+      <div class="slider"></div>
+      <label class="home" for="home"><i class="fas fa-home"></i>Home</label>
+      <label class="about" for="about"><i class="fas fa-user"></i>About</label>
+      <label class="contact" for="contact"><i class="fas fa-address-book"></i>Contact</label>
+      <label class="login" for="login"><i class="fas fa-user"></i>Login</label>
+      <label class="signup" for="signup"><i class="fas fa-user-plus"></i>Signup</label>
+      
+    </nav>
+  </div>
+</body>
+</html>
+
+
+
+
