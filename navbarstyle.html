@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.bundle.js"></script>
+    <script src="https://kit.fontawesome.com/bab9461982.js" crossorigin="anonymous"></script>
+    <style>
+        .container {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        nav {
+            /* border-radius: 30px; */
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            background-color: black;
+            text-align: center;
+        }
+
+        label {
+            width: 100%;
+            line-height: 60px;
+            font-weight: 400;
+            color: white;
+            position: relative;
+        }
+
+        label:hover {
+            color: red;
+        }
+
+        label i {
+            margin-right: 4px;
+            
+        }
+
+        .slider {
+            position: absolute;
+            width: 60px;
+            transition: 0.45s;
+            height: 10px;
+            top: 0px;
+            left: -100px;
+            transform: translate(-50%, -50%);
+            
+        }
+        
+
+        .slider::before {
+            content: "";
+            position: absolute;
+            bottom: -55px;
+            left: 5px;
+            border-width: 53px 25px 2px;
+            border-style: solid;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 90%, 0% 90%, 0% 100%);
+            animation: glow 1.5s infinite;
+        }
+
+        #download:checked ~ nav .slider {
+            left: 10%;
+            background-color: blue;
+            
+        }
+
+        #download:checked ~ nav .slider::before {
+          color: rgb(41, 40, 40);
+        }
+
+        #like:checked ~ nav .slider {
+            left: 30%;
+            background-color: green;
+        }
+
+        #like:checked ~ nav .slider::before {
+            color: rgb(41, 40, 40);
+        }
+
+        #share:checked ~ nav .slider {
+            left: 50%;
+            background-color: orange;
+        }
+
+        #share:checked ~ nav .slider::before {
+          color: rgb(41, 40, 40);
+        }
+
+        #comment:checked ~ nav .slider {
+            left: 70%;
+            background-color: purple;
+        }
+
+        #comment:checked ~ nav .slider::before {
+          color: rgb(41, 40, 40);
+        }
+
+        #bars:checked ~ nav .slider {
+            left: 90%;
+            background-color: pink;
+        }
+
+        #bars:checked ~ nav .slider::before {
+          color: rgb(41, 40, 40);
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        #download:checked ~ nav label[for="download"] {
+            color: blue;
+            text-shadow: 0 10px 15px;
+            animation: glow 1.5s infinite;
+        }
+
+        #like:checked ~ nav label[for="like"] {
+            color: green;
+            text-shadow: 0 10px 15px;
+        }
+
+        #share:checked ~ nav label[for="share"] {
+            color: orange;
+            text-shadow: 0 10px 15px;
+        }
+
+        #comment:checked ~ nav label[for="comment"] {
+            color: purple;
+            text-shadow: 0 10px 15px;
+        }
+
+        #bars:checked ~ nav label[for="bars"] {
+            color: pink;
+            text-shadow: 0 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="radio" name="s" id="download">
+        <input type="radio" name="s" id="like">
+        <input type="radio" name="s" id="share">
+        <input type="radio" name="s" id="comment">
+        <input type="radio" name="s" id="bars">
+        
+        <nav>
+            <div class="slider"></div>
+            <label class="download" for="download"><i class="fas fa-thin fa-house"></i></label>
+            <label class="like" for="like"><i class="fas fa-heart"></i></label>
+            <label class="share" for="share"><i class="fas fa-circle-plus"></i></label>
+            <label class="comment" for="comment"><i class="fas fa-user"></i></label>
+            <label class="bars" for="bars"><i class="fas fa-bell"></i></label>
+        </nav>
+    </div>
+</body>
+</html>
